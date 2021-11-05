@@ -18,7 +18,7 @@ texto1_2= '\n A obra começa quando um aviador tem um problema em seu avião e f
 texto1_3 = 'As aquarelas originais, já símbolos do livro, são – em minha humilde opinião – maravilhosas, e entram em total contexto com a leveza do Pequeno Príncipe e sua ingenuidade, que nos traz a moral de nossa criança interior.'
 texto1_4 ='Talvez o que mais cative na história seja a biografia do autor, Antoine de Saint-Exupéry, e as semelhanças inacreditáveis entre sua vida e a história do piloto do livro (Saint-Exupéry realmente caiu no deserto no Saara... já imaginou?). O autor também tem uma história da vida real que aparece no livro por meio da rosa. Ele teve um romance complicado, com uma mulher de El Salvador, chamada Consuelo. O relacionamento, sempre entre “tapas e beijos”, é tido como inspiração para a história entre a Rosa e o Pequeno Príncipe.'
 TextoInicio = 'Olá eu sou o LiteGato_Bot e sou apaixonado por leitura!'
-TextoDeBoasVindas= 'Olá eu sou o @LiteGato_Bot 🐱 e sou apaixonado por leitura! 📚 \nMeu trabalho aqui é distribuir as newsletters 📧 da minha mamãe Mariana 👩‍🦰 \nEu posso distribuir a mais nova neslettter ou as versões passadas! Qual vai querer? \n Digite\n [0] para a Nova \n [1] para acessar as versões passadas'
+TextoDeBoasVindas= 'Olá eu sou o @LiteGato_Bot 🐱 e sou apaixonado por leitura! 📚 \nMeu trabalho aqui é distribuir as newsletters 📧 da minha mamãe Mariana 👩‍🦰 \nEu posso distribuir a mais nova neslettter ou as versões passadas! Qual vai querer? \n Digite\n /0 para a Nova \n /1 para acessar as versões passadas'
 TextoDoFim = 'Pronto essa foi a newsletter da semana escolhida, se quiser ver mais é só digitar /newsletter! 🥰😸😽'
 
 texto2 = 'Bom, vamos lá: De um lado, temos Evelyn Hugo, uma atriz de Hollywood, beirando os 80 anos. Do outro, Monique, uma jornalista que estava estagnada, mas agora conta, com exclusividade, a história de Evelyn e dos sete maridos da atriz, ao que a obra se resume. '
@@ -78,9 +78,9 @@ def handle_message(update,context):
     print(user_messages)
     if user_messages in ('Ola', 'Olá', 'Oi', 'oi','ola','newsletter','newsletters','Newsletters','Newsletter','/start','/newsletter','/Newsletter'):
         context.bot.send_message(chat_id= get_chat_id(update,context), text = TextoDeBoasVindas)
-    if user_messages in '1':
+    if user_messages in ('1','/1'):
         context.bot.send_message(chat_id = get_chat_id(update, context),text = 'Escolha qual semana vai Querer? \n/primeira Pequeno Principe 🤴 \n/segunda Os Sete Maridos de Evelyn Hugo 👰\n/terceira Dom Casmurro 🕴️\n/quarta Capitães da Areia 🪖⏳\n/quinta Harry Potter ⚡🤓') 
-    if user_messages in '0':
+    if user_messages in ('0','/0'):
         actual_newsletter(update, context)
     if user_messages in ('/primeira', 'primeira'):
         context.bot.send_message(chat_id = get_chat_id(update, context),text = 'Essa Semana o tema é o Pequeno Principe 🤴')
@@ -148,7 +148,7 @@ def main():
     dp.add_handler(CommandHandler('help', help_command))
     dp.add_handler(MessageHandler(Filters.text, handle_message))
     dp.add_error_handler(error)
-    updater.start_polling()
+    updater.start_polling(10)
     updater.idle()
 
 main()
