@@ -1,5 +1,6 @@
 import time
 import math
+import os
 from typing import KeysView
 from telegram import chat, user
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
@@ -9,7 +10,9 @@ from telegram.ext import Updater
 import telegram
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-
+from dotenv import load_dotenv
+#enviroment variables
+load_dotenv()
 
 ## texto das newsletters ! o primeiro paramentro indica a semana e o segundo a parte da newsletter sendo ilustrado
 
@@ -32,7 +35,7 @@ texto3_1='Essa é uma das maiores polêmicas literárias nacionais – se não a
 ######################
 
 
-API_KEY = '2034974533:AAHVSm2c-XU7rgLJhdFOirH-oiqCslRkl0Q'
+API_KEY = os.getenv('API_KEY')
 bot = telegram.Bot(token=API_KEY)
 try:
     chat_id = bot.get_updates()[-1].message.chat_id
