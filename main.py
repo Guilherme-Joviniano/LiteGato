@@ -89,7 +89,7 @@ def handle_message(update,context):
     if user_messages in ('Ola', 'Olá', 'Oi', 'oi','ola','newsletter','newsletters','Newsletters','Newsletter','/start','/newsletter','/Newsletter'):
         context.bot.send_message(chat_id= get_chat_id(update,context), text = TextoDeBoasVindas)
     if user_messages in ('1','/1'):
-        context.bot.send_message(chat_id = get_chat_id(update, context),text = 'Escolha qual semana vai Querer? \n/primeira Pequeno Principe 🤴 \n/segunda Os Sete Maridos de Evelyn Hugo 👰\n/terceira Dom Casmurro 🕴️\n/quarta Capitães da Areia 🪖⏳\n/quinta Harry Potter ⚡🤓') 
+        context.bot.send_message(chat_id = get_chat_id(update, context),text = 'Escolha qual semana vai Querer? \n/primeira Pequeno Principe 🤴 \n/segunda Os Sete Maridos de Evelyn Hugo 👰\n/terceira Dom Casmurro 🕴️\n/quarta Capitães da Areia 🪖⏳\n/quinta Harry Potter ⚡🤓\n/sexta Orwell e Marx - Como relacionamos? 📚') 
     if user_messages in ('0','/0'):
         actual_newsletter(update, context)
     if user_messages in ('/primeira', 'primeira'):
