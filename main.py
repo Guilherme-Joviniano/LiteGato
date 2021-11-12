@@ -11,7 +11,9 @@ import telegram
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from dotenv import load_dotenv
+
 #enviroment variables
+
 load_dotenv()
 
 ## texto das newsletters ! o primeiro paramentro indica a semana e o segundo a parte da newsletter sendo ilustrado
@@ -23,17 +25,13 @@ texto1_4 ='Talvez o que mais cative na história seja a biografia do autor, Anto
 TextoInicio = 'Olá eu sou o LiteGato_Bot e sou apaixonado por leitura!'
 TextoDeBoasVindas= 'Olá eu sou o @LiteGato_Bot 🐱 e sou apaixonado por leitura! 📚 \nMeu trabalho aqui é distribuir as newsletters 📧 da minha mamãe Mariana 👩‍🦰 \nEu posso distribuir a mais nova neslettter ou as versões passadas! Qual vai querer? \n Digite\n /0 para a Nova \n /1 para acessar as versões passadas'
 TextoDoFim = 'Pronto essa foi a newsletter da semana escolhida, se quiser ver mais é só digitar /newsletter! 🥰😸😽'
-
 texto2 = 'Bom, vamos lá: De um lado, temos Evelyn Hugo, uma atriz de Hollywood, beirando os 80 anos. Do outro, Monique, uma jornalista que estava estagnada, mas agora conta, com exclusividade, a história de Evelyn e dos sete maridos da atriz, ao que a obra se resume. '
 texto2_1 ='Talvez, o ponto mais impactante – destacado em diversas resenhas – seja a forma com que a autora explora a feminilidade e nos faz refletir sobre o papel que a mulher toma, seja na década de 50 ou nos dias de hoje. A obra, além de ser um romance jovem adulto bem escrito, com certeza também é uma fonte para reflexão e indagação.'
 texto2_2 ='No podcast Variartes, eles debatem temas cotidianos e incorporam histórias de livros nas conversas. Nesse segundo episódio, com o tema “casamento”, Evelyn Hugo é muito bem citada.'
-
 texto3 = ' Uma obra de angústias, matrimônio e crises. E aqui vai uma sinopse rápida, pra você pegar o contexto:  Bentinho havia sido prometido padre pela mãe, mas também havia tido prometido casamento à Capitu. Nisso, vai ao seminário, mas em uma das visitas à família, decide abandonar a carreira no clero. Depois, se casa, e tem um filho - que nasce (de acordo com as palavras do próprio Bentinho) a cara do seu melhor amigo: Escobar.  Capitu nega, mas já era tarde: o ciúme já tinha tomado conta de tudo.  Intrigas pra lá, discussões pra cá... e ainda se discute se ela traiu ou não traiu. É uma história fantástica, que só você mesmo lendo pra formar sua própria opinião! '
 texto3_1='Essa é uma das maiores polêmicas literárias nacionais – se não a maior, e levanta o poder de questionamento a uma narração em primeira pessoa, ainda mais vinda de uma pessoa não tão confiável...\nMas, não acho que fosse isso que Machado quisesse. Tanto que ele morreu sem nunca contar a ninguém quem era o pai de Ezequiel. “Dom Casmurro” vai muito além de uma traição. É um romance quase proibido por ordem divina, com personagens fantásticas e com uma construção impecável. Quando li pela primeira vez, me senti traída junto com Bentinho. Pela segunda, me senti, junto de Capitu, ofendida pela acusação. Machado tem esse dom de te fazer entrar na obra - literalmente fugir da realidade.'
 
-
 ######################
-
 
 API_KEY = os.getenv('API_KEY')
 bot = telegram.Bot(token=API_KEY)
